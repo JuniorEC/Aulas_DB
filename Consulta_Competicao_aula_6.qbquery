@@ -1,0 +1,40 @@
+﻿SELECT * FROM atleta a;
+
+--Inserindo dados
+
+Insert into atleta
+values
+(1,"Paulo Cruz", "M", "2000/08/15","Belem"), (2,"Fernanda Lima", "F", "1998/10/21","Sao Paulo"),
+(3,"Mario Freitas", "M", "1997/03/08","Brasilia"),
+(4,"Pedro Brito", "M", "1995/12/22","Belem"),
+(5,"Patricia Silva", "F", "2000/03/01","Sao Paulo");
+
+insert into atleta
+values
+(6,"Antonio Sousa","M","2001/09/01","Belem");
+
+--Atualizando dados
+
+Update atleta
+set Cidade = "Salvador"
+where idAtleta = 3;
+
+Update atleta
+set dtNascimento = "2000/01/03"
+where Nome_atleta like "Patricia%";
+
+Update atleta
+set cidade = "Rio de Janeiro"
+where Nome_atleta like "F%"
+and Cidade = "Sao Paulo";
+
+Update atleta
+Set dtNascimento = "1996/05/13"
+where idAtleta = 7;
+
+where dtNascimento is null;
+
+
+
+Delete from atleta
+where idAtleta = 6;
