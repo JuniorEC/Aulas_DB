@@ -1,6 +1,5 @@
 ﻿SELECT * FROM atleta a;
 
---Inserindo dados
 
 Insert into atleta
 values
@@ -38,3 +37,75 @@ where dtNascimento is null;
 
 Delete from atleta
 where idAtleta = 6;
+
+SELECT * FROM penalidade p;
+
+Insert into penalidade
+values
+(1, "2020/08/15", 10, 1);
+
+Insert into penalidade
+values
+(2, "2020/08/20", 10, 1);
+
+Insert into penalidade
+values
+(3, "2020/08/25", 10, 1);
+
+Insert into penalidade
+values
+(4, "2020/08/15", 10, 2);
+
+Insert into penalidade
+values
+(11, "2020/12/15", 10, 1);
+
+select DATE_ADD(CURDATE(), INTERVAL 120 DAY);
+
+Select Now(),curdate(),curtime();
+
+select DATE_FORMAT(curdate(),'%d %m %y');
+
+select DATE_FORMAT(DATE_ADD(curdate(),INTERVAL 120 DAY), '%d %m %y' );
+
+select nome_atleta, dtnascimento, DATEDIFF(CURDATE(),dtnascimento) from atleta;
+
+select nome_atleta, DAYNAME(dtnascimento) from atleta where Dayname(dtnascimento) = 'FRIDAY';
+
+select DateDiff(Curdate(), '1993-01-28'), Dayname('1993-01-28');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
