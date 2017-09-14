@@ -1,0 +1,51 @@
+﻿SELECT * FROM atleta a;
+
+SELECT * FROM penalidade p;
+
+SELECT * FROM atleta_equipe a;
+
+
+select
+a.nomeatleta Atleta,
+p.data Data_da_penalidade,
+p.Pontos Pontos_Recebidos
+from atleta a
+inner join penalidade p on a.idAtleta = p.atleta_idAtleta;
+
+
+select
+a.nomeatleta Atleta,
+count(*) qt_penalidades
+from atleta a
+inner join penalidade p on a.idAtleta = p.atleta_idAtleta
+group by p.atleta_idatleta;
+
+
+select
+a.nomeatleta Atleta,
+count(*) qt_penalidades
+from atleta a
+inner join penalidade p on a.idAtleta = p.atleta_idAtleta
+group by p.atleta_idatleta
+having count(*)>1;
+
+select
+a.nomeatleta Atleta,
+p.pontos,
+count(*) qt_penalidades
+from atleta a
+inner join penalidade p on a.idAtleta = p.atleta_idAtleta
+where p.pontos > 500
+group by p.atleta_idatleta;
+
+
+
+select
+a.nomeatleta Atleta,
+p.data,
+p.pontos,
+count(*) qt_penalidades
+from atleta a
+inner join penalidade p on a.idAtleta = p.atleta_idAtleta
+where Year(p.data) > 2008
+group by p.atleta_idatleta;
