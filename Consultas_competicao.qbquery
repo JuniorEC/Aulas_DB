@@ -4,7 +4,7 @@ SELECT * FROM penalidade p;
 
 SELECT * FROM atleta_equipe a;
 
-
+/*Q.1) Mostre o nome do atleta, a data e o valor das penalidades:*/
 select
 a.nomeatleta Atleta,
 p.data Data_da_penalidade,
@@ -12,15 +12,15 @@ p.Pontos Pontos_Recebidos
 from atleta a
 inner join penalidade p on a.idAtleta = p.atleta_idAtleta;
 
-
+/*Q.2) Mostre o nome do atleta e quantas penalidades cada atleta tem:*/
 select
 a.nomeatleta Atleta,
 count(*) qt_penalidades
 from atleta a
 inner join penalidade p on a.idAtleta = p.atleta_idAtleta
-group by p.atleta_idatleta;
+group by a.nomeatleta;
 
-
+/*Q.3) Mostre somente os nomes dos atletas que tiveram mais de uma penalidades:*/
 select
 a.nomeatleta Atleta,
 count(*) qt_penalidades
@@ -29,6 +29,7 @@ inner join penalidade p on a.idAtleta = p.atleta_idAtleta
 group by p.atleta_idatleta
 having count(*)>1;
 
+/*Q.4) Mostre os nome dos atletas e quantidade de penalidades que cada atleta recebeu acima de 500 pontos:*/
 select
 a.nomeatleta Atleta,
 p.pontos,
@@ -38,8 +39,7 @@ inner join penalidade p on a.idAtleta = p.atleta_idAtleta
 where p.pontos > 500
 group by p.atleta_idatleta;
 
-
-
+/*Q.5) Mostre os nomes dos atletas que receberam penalidades depois de 2008:*/
 select
 a.nomeatleta Atleta,
 p.data,
